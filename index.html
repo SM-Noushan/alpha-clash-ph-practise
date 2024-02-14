@@ -33,15 +33,16 @@
     </script>
 </head>
 
-<body class="bg-color1 bg-[url('alphabet-clash-pro-resources/images/background.png')] bg-no-repeat bg-center min-h-dvh">
+<body
+    class="bg-color1 bg-[url('alphabet-clash-pro-resources/images/background.png')] bg-no-repeat bg-center *:min-h-dvh">
     <!-- home/play-now section -->
-    <section id="home" class="font-poppins text-white flex flex-col items-center justify-center min-h-dvh hidden">
+    <section id="home" class="font-poppins text-white flex flex-col items-center justify-center hidden">
         <h1 class="text-[170px] font-anton uppercase">Alpha Clash</h1>
         <p class="text-2xl leading-7 font-medium mb-14">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
         <button class="btn btn-lg text-color1 text-2xl leading-7 font-semibold">Play Now</button>
     </section>
     <!-- game layout section -->
-    <section id="game-layout" class="flex flex-col items-center justify-center gap-14 min-h-dvh">
+    <section id="game-layout" class="flex flex-col items-center justify-center gap-14 hidden">
         <!-- game ui -->
         <div>
             <div
@@ -108,7 +109,16 @@
             </button>
         </div>
     </section>
-
+    <!-- scorecard section -->
+    <section id="scorecard" class="flex flex-col items-center justify-center">
+        <div
+            class="px-12 py-11 bg-[linear-gradient(121deg,rgba(255,255,255,0.56)0,rgba(152,151,151,0.00)102.2%),url('alphabet-clash-pro-resources/images/scorecard.svg')] bg-no-repeat border border-white/20 rounded-2xl text-white *:font-poppins flex flex-col items-center gap-4">
+            <p class="text-6xl font-extrabold leading-[70px]">Score <span class="font-semibold">:</span> <span
+                    class="font-medium">14</span></p>
+            <button class="btn btn-lg text-2xl leading-7 font-semibold">Play Again</button>
+            <p class="text-xl leading-6 font-medium">Practice will make you Pro</p>
+        </div>
+    </section>
     <script src="index.js"></script>
 </body>
 
