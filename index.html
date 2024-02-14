@@ -36,10 +36,10 @@
 <body
     class="bg-color1 bg-[url('alphabet-clash-pro-resources/images/background.png')] bg-no-repeat bg-center *:min-h-dvh">
     <!-- home/play-now section -->
-    <section id="home" class="font-poppins text-white flex flex-col items-center justify-center hidden">
+    <section id="home" class="font-poppins text-white flex flex-col items-center justify-center">
         <h1 class="text-[170px] font-anton uppercase">Alpha Clash</h1>
         <p class="text-2xl leading-7 font-medium mb-14">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-        <button class="btn btn-lg text-color1 text-2xl leading-7 font-semibold">Play Now</button>
+        <button onclick="play()" class="btn btn-lg text-color1 text-2xl leading-7 font-semibold">Play Now</button>
     </section>
     <!-- game layout section -->
     <section id="game-layout" class="flex flex-col items-center justify-center gap-14 hidden">
@@ -51,44 +51,45 @@
                     <p class="text-white text-lg leading-5 font-medium">Don't watch keyboard while playing...</p>
                 </div>
                 <div class="flex-1 flex items-center">
-                    <p class="text-color1 text-[100px] leading-[120px] font-semibold">Y</p>
+                    <p id="current-alphabet" class="text-color1 text-[100px] leading-[120px] font-semibold uppercase">
+                    </p>
                 </div>
             </div>
         </div>
         <!-- keyboard ui -->
         <div class="*:flex *:justify-center *:gap-2 *:my-1 *:w-full">
             <div class="">
-                <kbd class="kbd kbd-lg">q</kbd>
-                <kbd class="kbd kbd-lg">w</kbd>
-                <kbd class="kbd kbd-lg">e</kbd>
-                <kbd class="kbd kbd-lg">r</kbd>
-                <kbd class="kbd kbd-lg">t</kbd>
-                <kbd class="kbd kbd-lg">y</kbd>
-                <kbd class="kbd kbd-lg">u</kbd>
-                <kbd class="kbd kbd-lg">i</kbd>
-                <kbd class="kbd kbd-lg">o</kbd>
-                <kbd class="kbd kbd-lg">p</kbd>
+                <kbd id="key-q" class="kbd kbd-lg">q</kbd>
+                <kbd id="key-w" class="kbd kbd-lg">w</kbd>
+                <kbd id="key-e" class="kbd kbd-lg">e</kbd>
+                <kbd id="key-r" class="kbd kbd-lg">r</kbd>
+                <kbd id="key-t" class="kbd kbd-lg">t</kbd>
+                <kbd id="key-y" class="kbd kbd-lg">y</kbd>
+                <kbd id="key-u" class="kbd kbd-lg">u</kbd>
+                <kbd id="key-i" class="kbd kbd-lg">i</kbd>
+                <kbd id="key-o" class="kbd kbd-lg">o</kbd>
+                <kbd id="key-p" class="kbd kbd-lg">p</kbd>
             </div>
             <div class="">
-                <kbd class="kbd kbd-lg">a</kbd>
-                <kbd class="kbd kbd-lg">s</kbd>
-                <kbd class="kbd kbd-lg">d</kbd>
-                <kbd class="kbd kbd-lg">f</kbd>
-                <kbd class="kbd kbd-lg">g</kbd>
-                <kbd class="kbd kbd-lg">h</kbd>
-                <kbd class="kbd kbd-lg">j</kbd>
-                <kbd class="kbd kbd-lg">k</kbd>
-                <kbd class="kbd kbd-lg">l</kbd>
+                <kbd id="key-a" class="kbd kbd-lg">a</kbd>
+                <kbd id="key-s" class="kbd kbd-lg">s</kbd>
+                <kbd id="key-d" class="kbd kbd-lg">d</kbd>
+                <kbd id="key-f" class="kbd kbd-lg">f</kbd>
+                <kbd id="key-g" class="kbd kbd-lg">g</kbd>
+                <kbd id="key-h" class="kbd kbd-lg">h</kbd>
+                <kbd id="key-j" class="kbd kbd-lg">j</kbd>
+                <kbd id="key-k" class="kbd kbd-lg">k</kbd>
+                <kbd id="key-l" class="kbd kbd-lg">l</kbd>
             </div>
             <div class="">
-                <kbd class="kbd kbd-lg">z</kbd>
-                <kbd class="kbd kbd-lg">x</kbd>
-                <kbd class="kbd kbd-lg">c</kbd>
-                <kbd class="kbd kbd-lg">v</kbd>
-                <kbd class="kbd kbd-lg">b</kbd>
-                <kbd class="kbd kbd-lg">n</kbd>
-                <kbd class="kbd kbd-lg">m</kbd>
-                <kbd class="kbd kbd-lg">/</kbd>
+                <kbd id="key-z" class="kbd kbd-lg">z</kbd>
+                <kbd id="key-x" class="kbd kbd-lg">x</kbd>
+                <kbd id="key-c" class="kbd kbd-lg">c</kbd>
+                <kbd id="key-v" class="kbd kbd-lg">v</kbd>
+                <kbd id="key-b" class="kbd kbd-lg">b</kbd>
+                <kbd id="key-n" class="kbd kbd-lg">n</kbd>
+                <kbd id="key-m" class="kbd kbd-lg">m</kbd>
+                <kbd id="key-/" class="kbd kbd-lg">/</kbd>
             </div>
         </div>
         <!-- life-score ui -->
@@ -99,23 +100,23 @@
 
                 <img src="alphabet-clash-pro-resources/images/life.svg" alt="icons">
                 </svg>
-                <span>1</span>
+                <span id="life-points">3</span>
             </button>
             <button class="btn bg-[#360490] hover:bg-[#360490]/80 ">
                 Score
                 <img src="alphabet-clash-pro-resources/images/score.svg" alt="icons">
                 </svg>
-                <span>1</span>
+                <span id="current-score">0</span>
             </button>
         </div>
     </section>
     <!-- scorecard section -->
-    <section id="scorecard" class="flex flex-col items-center justify-center">
+    <section id="scorecard" class="flex flex-col items-center justify-center hidden">
         <div
             class="px-12 py-11 bg-[linear-gradient(121deg,rgba(255,255,255,0.56)0,rgba(152,151,151,0.00)102.2%),url('alphabet-clash-pro-resources/images/scorecard.svg')] bg-no-repeat border border-white/20 rounded-2xl text-white *:font-poppins flex flex-col items-center gap-4">
             <p class="text-6xl font-extrabold leading-[70px]">Score <span class="font-semibold">:</span> <span
-                    class="font-medium">14</span></p>
-            <button class="btn btn-lg text-2xl leading-7 font-semibold">Play Again</button>
+                    id="final-score" class="font-medium"></span></p>
+            <button onclick="playAgain()" class="btn btn-lg text-2xl leading-7 font-semibold">Play Again</button>
             <p class="text-xl leading-6 font-medium">Practice will make you Pro</p>
         </div>
     </section>
