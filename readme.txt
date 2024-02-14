@@ -1,0 +1,1 @@
+Alpha Clash: A fun typing challenge game; you just need to type the corresponding alphabet without watching your keyboard. Have FUN!
