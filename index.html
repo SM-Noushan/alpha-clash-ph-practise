@@ -33,12 +33,80 @@
     </script>
 </head>
 
-<body class="bg-color1 bg-[url('alphabet-clash-pro-resources/images/background.png')] bg-no-repeat bg-center">
+<body class="bg-color1 bg-[url('alphabet-clash-pro-resources/images/background.png')] bg-no-repeat bg-center min-h-dvh">
     <!-- home/play-now section -->
-    <section id="home" class="font-poppins text-white flex flex-col items-center justify-center min-h-dvh hodden">
+    <section id="home" class="font-poppins text-white flex flex-col items-center justify-center min-h-dvh hidden">
         <h1 class="text-[170px] font-anton uppercase">Alpha Clash</h1>
         <p class="text-2xl leading-7 font-medium mb-14">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
         <button class="btn btn-lg text-color1 text-2xl leading-7 font-semibold">Play Now</button>
+    </section>
+    <!-- game layout section -->
+    <section id="game-layout" class="flex flex-col items-center justify-center gap-14 min-h-dvh">
+        <!-- game ui -->
+        <div>
+            <div
+                class="artboard artboard-horizontal phone-6 bg-white/70 border-[20px] border-color1/80 rounded-2xl flex flex-col items-center justify-center font-poppins">
+                <div class="bg-[#2F2941] rounded-b-xl px-8 pt-1 pb-4">
+                    <p class="text-white text-lg leading-5 font-medium">Don't watch keyboard while playing...</p>
+                </div>
+                <div class="flex-1 flex items-center">
+                    <p class="text-color1 text-[100px] leading-[120px] font-semibold">Y</p>
+                </div>
+            </div>
+        </div>
+        <!-- keyboard ui -->
+        <div class="*:flex *:justify-center *:gap-2 *:my-1 *:w-full">
+            <div class="">
+                <kbd class="kbd kbd-lg">q</kbd>
+                <kbd class="kbd kbd-lg">w</kbd>
+                <kbd class="kbd kbd-lg">e</kbd>
+                <kbd class="kbd kbd-lg">r</kbd>
+                <kbd class="kbd kbd-lg">t</kbd>
+                <kbd class="kbd kbd-lg">y</kbd>
+                <kbd class="kbd kbd-lg">u</kbd>
+                <kbd class="kbd kbd-lg">i</kbd>
+                <kbd class="kbd kbd-lg">o</kbd>
+                <kbd class="kbd kbd-lg">p</kbd>
+            </div>
+            <div class="">
+                <kbd class="kbd kbd-lg">a</kbd>
+                <kbd class="kbd kbd-lg">s</kbd>
+                <kbd class="kbd kbd-lg">d</kbd>
+                <kbd class="kbd kbd-lg">f</kbd>
+                <kbd class="kbd kbd-lg">g</kbd>
+                <kbd class="kbd kbd-lg">h</kbd>
+                <kbd class="kbd kbd-lg">j</kbd>
+                <kbd class="kbd kbd-lg">k</kbd>
+                <kbd class="kbd kbd-lg">l</kbd>
+            </div>
+            <div class="">
+                <kbd class="kbd kbd-lg">z</kbd>
+                <kbd class="kbd kbd-lg">x</kbd>
+                <kbd class="kbd kbd-lg">c</kbd>
+                <kbd class="kbd kbd-lg">v</kbd>
+                <kbd class="kbd kbd-lg">b</kbd>
+                <kbd class="kbd kbd-lg">n</kbd>
+                <kbd class="kbd kbd-lg">m</kbd>
+                <kbd class="kbd kbd-lg">/</kbd>
+            </div>
+        </div>
+        <!-- life-score ui -->
+        <div class="flex justify-between w-3/4 *:rounded-[30px] *:text-white *:border-black *:px-6">
+            <button
+                class="btn bg-[#894189] bg-[url('alphabet-clash-pro-resources/images/layer.svg')] bg-no-repeat hover:bg-[#894189]/80">
+                Life
+
+                <img src="alphabet-clash-pro-resources/images/life.svg" alt="icons">
+                </svg>
+                <span>1</span>
+            </button>
+            <button class="btn bg-[#360490] hover:bg-[#360490]/80 ">
+                Score
+                <img src="alphabet-clash-pro-resources/images/score.svg" alt="icons">
+                </svg>
+                <span>1</span>
+            </button>
+        </div>
     </section>
 
     <script src="index.js"></script>
